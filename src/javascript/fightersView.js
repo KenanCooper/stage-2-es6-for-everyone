@@ -24,9 +24,13 @@ class FightersView extends View {
 
   handleFighterClick(event, fighter) {
     this.fightersDetailsMap.set(fighter._id, fighter);
-    const fighterMap = this.fightersDetailsMap.get(fighter._id); // nothing good!!!
+    const fighterMap = this.fightersDetailsMap.get(fighter._id);
     const showInfo = (fighterService.getFighterDetails(fighterMap._id)) 
-      .then(showInfo => { console.log('Name - ' + showInfo.name, 'Health - ' + showInfo.health,'Attack - ' + showInfo.attack, 'Defense - ' + showInfo.defense) });
+      .then(showInfo => { alert(`
+      Name: ${showInfo.name} 
+      Health: ${showInfo.health}
+      Attack: ${showInfo.attack}
+      Defense: ${showInfo.defense}`) });
     // console.log(showInfo);
     
     
